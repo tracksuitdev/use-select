@@ -1,0 +1,5643 @@
+{
+	"id": 0,
+	"name": "use-select",
+	"kind": 0,
+	"flags": {},
+	"originalName": "",
+	"children": [
+		{
+			"id": 1,
+			"name": "combobox-core",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 53,
+					"name": "ComboboxFunctions",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 55,
+							"name": "filter",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "combobox-core.ts",
+									"line": 90,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 56,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 57,
+											"name": "__type",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"comment": {
+												"shortText": "Function used for filtering items, default is {@link defaultFilter}"
+											},
+											"parameters": [
+												{
+													"id": 58,
+													"name": "items",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"shortText": "all combobox items"
+													},
+													"type": {
+														"type": "array",
+														"elementType": {
+															"type": "reference",
+															"name": "T"
+														}
+													}
+												},
+												{
+													"id": 59,
+													"name": "query",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"shortText": "current input value of combobox"
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 60,
+													"name": "itemToString",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"comment": {
+														"shortText": "function that converts item to string\n"
+													},
+													"type": {
+														"type": "reference",
+														"id": 48,
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "T"
+															}
+														],
+														"name": "ItemToString"
+													}
+												}
+											],
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"name": "T"
+												}
+											}
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 54,
+							"name": "itemToString",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"comment": {
+								"shortText": "Function that converts item to string. Since items can be of any type, to compare them we need to have a way of\nconverting them to string."
+							},
+							"sources": [
+								{
+									"fileName": "combobox-core.ts",
+									"line": 83,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 48,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "ItemToString"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								55,
+								54
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "combobox-core.ts",
+							"line": 78,
+							"character": 34
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 61,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					]
+				},
+				{
+					"id": 48,
+					"name": "ItemToString",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "combobox-core.ts",
+							"line": 61,
+							"character": 24
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 52,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 49,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "combobox-core.ts",
+									"line": 61,
+									"character": 29
+								}
+							],
+							"signatures": [
+								{
+									"id": 50,
+									"name": "__type",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 51,
+											"name": "item",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "reference",
+												"name": "T"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 38,
+					"name": "UseInputValueHandlerProps",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "combobox-core.ts",
+							"line": 4,
+							"character": 37
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 39,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 44,
+									"name": "setHighlightedIndex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "combobox-core.ts",
+											"line": 12,
+											"character": 21
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 45,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "combobox-core.ts",
+													"line": 12,
+													"character": 22
+												}
+											],
+											"signatures": [
+												{
+													"id": 46,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "Saves given index in state"
+													},
+													"parameters": [
+														{
+															"id": 47,
+															"name": "index",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 40,
+									"name": "setInputValue",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "combobox-core.ts",
+											"line": 8,
+											"character": 15
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 41,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "combobox-core.ts",
+													"line": 8,
+													"character": 16
+												}
+											],
+											"signatures": [
+												{
+													"id": 42,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "Saves given value in state"
+													},
+													"parameters": [
+														{
+															"id": 43,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										44,
+										40
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "combobox-core.ts",
+									"line": 4,
+									"character": 39
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 25,
+					"name": "defaultFilter",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "combobox-core.ts",
+							"line": 70,
+							"character": 29
+						}
+					],
+					"signatures": [
+						{
+							"id": 26,
+							"name": "defaultFilter",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "This function will be used if filter prop is not provided to combobox hooks. It returns all items that start with\nquery string. Comparison is case insensitive."
+							},
+							"typeParameter": [
+								{
+									"id": 27,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {}
+								}
+							],
+							"parameters": [
+								{
+									"id": 28,
+									"name": "items",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "combobox items"
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "T"
+										}
+									}
+								},
+								{
+									"id": 29,
+									"name": "query",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "string to filter by"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 30,
+									"name": "itemToString",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "function that converts item to string\n"
+									},
+									"type": {
+										"type": "reference",
+										"id": 48,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "T"
+											}
+										],
+										"name": "ItemToString"
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "T"
+								}
+							}
+						}
+					]
+				},
+				{
+					"id": 14,
+					"name": "useComboboxBase",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "combobox-core.ts",
+							"line": 43,
+							"character": 31
+						}
+					],
+					"signatures": [
+						{
+							"id": 15,
+							"name": "useComboboxBase",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Base of combobox hooks, returns ref for input element and open and close handlers that take care of opening/closing\ndropdown and focusing/blurring input element"
+							},
+							"parameters": [
+								{
+									"id": 16,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 122,
+										"name": "Handlers"
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 17,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 22,
+											"name": "handleClose",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 23,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 24,
+															"name": "__type",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 19,
+											"name": "handleOpen",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 20,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 21,
+															"name": "__type",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 18,
+											"name": "inputRef",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "HTMLInputElement"
+													}
+												],
+												"name": "RefObject"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												22,
+												19,
+												18
+											]
+										}
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"id": 8,
+					"name": "useInputValueHandler",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "combobox-core.ts",
+							"line": 29,
+							"character": 36
+						}
+					],
+					"signatures": [
+						{
+							"id": 9,
+							"name": "useInputValueHandler",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns callback that updates inputValue and highlightedIndex state, resetting highlightedIndex to -1 when value is\nchanged. This is done because when inputValue changes, number of items can change depending on the filtering, if this\nhappens then highlightedIndex needs to be reset."
+							},
+							"parameters": [
+								{
+									"id": 10,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 38,
+										"name": "UseInputValueHandlerProps"
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 11,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 12,
+											"name": "__type",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 13,
+													"name": "value",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "void"
+											}
+										}
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "useInputValueState",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "combobox-core.ts",
+							"line": 19,
+							"character": 34
+						}
+					],
+					"signatures": [
+						{
+							"id": 3,
+							"name": "useInputValueState",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Simple hook for controlling the state of input used in combobox"
+							},
+							"parameters": [
+								{
+									"id": 4,
+									"name": "initialValue",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "initial value of input state\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 5,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 6,
+											"name": "inputValue",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 7,
+											"name": "setInputValue",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"typeArguments": [
+															{
+																"type": "intrinsic",
+																"name": "string"
+															}
+														],
+														"name": "SetStateAction"
+													}
+												],
+												"name": "Dispatch"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												6,
+												7
+											]
+										}
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"id": 31,
+					"name": "useRefCallback",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "combobox-core.ts",
+							"line": 100,
+							"character": 30
+						}
+					],
+					"signatures": [
+						{
+							"id": 32,
+							"name": "useRefCallback",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Helper hook that memoizes given function using ref. Neat trick to prevent rerunning of effects when a given function\nis recreated (such as on rerender of a component in which it is defined) while still obeying react-hooks-rules.",
+								"text": "Note that since refs are mutable, whenever returned function is called it will still be the \"latest\" function."
+							},
+							"typeParameter": [
+								{
+									"id": 36,
+									"name": "F",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 33,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 34,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 35,
+															"name": "args",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isRest": true
+															},
+															"type": {
+																"type": "array",
+																"elementType": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 37,
+									"name": "fn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "function that is memoized\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "F"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "F"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						53
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						48,
+						38
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						25,
+						14,
+						8,
+						2,
+						31
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "combobox-core.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 62,
+			"name": "core",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 99,
+					"name": "FetchItems",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core.ts",
+							"line": 4,
+							"character": 22
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 105,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 100,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 101,
+									"name": "fetchItems",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 9,
+											"character": 12
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 102,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "core.ts",
+													"line": 9,
+													"character": 13
+												}
+											],
+											"signatures": [
+												{
+													"id": 103,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "Fetch items asynchronously (from remote server)"
+													},
+													"parameters": [
+														{
+															"id": 104,
+															"name": "query",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"comment": {
+																"shortText": "value of input used in combobox\n"
+															},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "reference",
+														"typeArguments": [
+															{
+																"type": "array",
+																"elementType": {
+																	"type": "reference",
+																	"name": "T"
+																}
+															}
+														],
+														"name": "Promise"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										101
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "core.ts",
+									"line": 4,
+									"character": 27
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 130,
+					"name": "Flags",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core.ts",
+							"line": 23,
+							"character": 17
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 131,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 134,
+									"name": "clearable",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"shortText": "If true value can be set to undefined for {@link ValueControl.value}, and for {@link MultiValueControl.value} can\nbe set to an empty array. Note that for {@link MultiValueControl.value} case it is still possible to set value to\nan empty array by calling remove or removeByIndex on every selected item."
+									},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 37,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								},
+								{
+									"id": 133,
+									"name": "disabled",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"shortText": "If true open function does nothing, same as readOnly, provided as separate prop for convenience"
+									},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 31,
+											"character": 10
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								},
+								{
+									"id": 132,
+									"name": "readOnly",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"shortText": "If true open function does nothing, same as disabled, provided as separate prop for convenience"
+									},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 27,
+											"character": 10
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										134,
+										133,
+										132
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "core.ts",
+									"line": 23,
+									"character": 19
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 122,
+					"name": "Handlers",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core.ts",
+							"line": 13,
+							"character": 20
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 123,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 127,
+									"name": "onClose",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isOptional": true
+									},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 21,
+											"character": 9
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 128,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "core.ts",
+													"line": 21,
+													"character": 11
+												}
+											],
+											"signatures": [
+												{
+													"id": 129,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "Executes when close function is called, (closing of dropdown for select options)"
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 124,
+									"name": "onOpen",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isOptional": true
+									},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 17,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 125,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "core.ts",
+													"line": 17,
+													"character": 10
+												}
+											],
+											"signatures": [
+												{
+													"id": 126,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "Executes when open function is called, (opening of dropdown for select options)"
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										127,
+										124
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "core.ts",
+									"line": 13,
+									"character": 22
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 95,
+					"name": "Items",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core.ts",
+							"line": 3,
+							"character": 17
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 98,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 96,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 97,
+									"name": "items",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 3,
+											"character": 30
+										}
+									],
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "T"
+										}
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										97
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "core.ts",
+									"line": 3,
+									"character": 22
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 114,
+					"name": "MultiValueControl",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core.ts",
+							"line": 12,
+							"character": 29
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 121,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 115,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 117,
+									"name": "onChange",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isOptional": true
+									},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 12,
+											"character": 58
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 118,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "core.ts",
+													"line": 12,
+													"character": 60
+												}
+											],
+											"signatures": [
+												{
+													"id": 119,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 120,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isOptional": true
+															},
+															"type": {
+																"type": "array",
+																"elementType": {
+																	"type": "reference",
+																	"name": "T"
+																}
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 116,
+									"name": "value",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isOptional": true
+									},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 12,
+											"character": 42
+										}
+									],
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "T"
+										}
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										117,
+										116
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "core.ts",
+									"line": 12,
+									"character": 34
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 135,
+					"name": "UseSelectHandlersProps",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core.ts",
+							"line": 40,
+							"character": 34
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 152,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 136,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 151,
+									"name": "handleKeyDownBase",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"comment": {
+										"shortText": "KeyboardEventHandler for ArrowUp, ArrowDown and escape"
+									},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 52,
+											"character": 19
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "KeyboardEventHandler"
+									}
+								},
+								{
+									"id": 137,
+									"name": "highlightedIndex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"comment": {
+										"shortText": "Index of currently highlighted item, used for keyboard control"
+									},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 44,
+											"character": 18
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 147,
+									"name": "isSelected",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 48,
+											"character": 12
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 148,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "core.ts",
+													"line": 48,
+													"character": 13
+												}
+											],
+											"signatures": [
+												{
+													"id": 149,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 150,
+															"name": "item",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "T"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 138,
+									"name": "items",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 45,
+											"character": 7
+										}
+									],
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "T"
+										}
+									}
+								},
+								{
+									"id": 143,
+									"name": "remove",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 47,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 144,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "core.ts",
+													"line": 47,
+													"character": 9
+												}
+											],
+											"signatures": [
+												{
+													"id": 145,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 146,
+															"name": "item",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isOptional": true
+															},
+															"type": {
+																"type": "reference",
+																"name": "T"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 139,
+									"name": "select",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 46,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 140,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "core.ts",
+													"line": 46,
+													"character": 9
+												}
+											],
+											"signatures": [
+												{
+													"id": 141,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 142,
+															"name": "item",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "T"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										151,
+										137,
+										147,
+										138,
+										143,
+										139
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "core.ts",
+									"line": 40,
+									"character": 39
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 106,
+					"name": "ValueControl",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core.ts",
+							"line": 11,
+							"character": 24
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 113,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 107,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 109,
+									"name": "onChange",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isOptional": true
+									},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 11,
+											"character": 51
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 110,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "core.ts",
+													"line": 11,
+													"character": 53
+												}
+											],
+											"signatures": [
+												{
+													"id": 111,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 112,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isOptional": true
+															},
+															"type": {
+																"type": "reference",
+																"name": "T"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 108,
+									"name": "value",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isOptional": true
+									},
+									"sources": [
+										{
+											"fileName": "core.ts",
+											"line": 11,
+											"character": 37
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "T"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										109,
+										108
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "core.ts",
+									"line": 11,
+									"character": 29
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 85,
+					"name": "useHandlers",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core.ts",
+							"line": 158,
+							"character": 27
+						}
+					],
+					"signatures": [
+						{
+							"id": 86,
+							"name": "useHandlers",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Basic handlers for other hooks"
+							},
+							"typeParameter": [
+								{
+									"id": 87,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {}
+								}
+							],
+							"parameters": [
+								{
+									"id": 88,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 135,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "T"
+											}
+										],
+										"name": "UseSelectHandlersProps"
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 89,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 90,
+											"name": "handleItemClick",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 91,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 92,
+															"name": "__type",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"parameters": [
+																{
+																	"id": 93,
+																	"name": "item",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "reference",
+																		"name": "T"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 94,
+											"name": "handleKeyDown",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "Element"
+													}
+												],
+												"name": "KeyboardEventHandler"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												90,
+												94
+											]
+										}
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"id": 63,
+					"name": "useSelectBase",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core.ts",
+							"line": 61,
+							"character": 29
+						}
+					],
+					"signatures": [
+						{
+							"id": 64,
+							"name": "useSelectBase",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Hook that creates basic callbacks used by other hooks in this lib, creates selectRef and dropdownRef and holds\ndropdown (isOpen) and highlighted index states"
+							},
+							"typeParameter": [
+								{
+									"id": 65,
+									"name": "S",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLDivElement"
+									}
+								},
+								{
+									"id": 66,
+									"name": "D",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLUListElement"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 67,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "UseSelectBaseProps"
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 68,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 70,
+											"name": "close",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 71,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 72,
+															"name": "__type",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 84,
+											"name": "dropdownRef",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "D"
+													}
+												],
+												"name": "RefObject"
+											}
+										},
+										{
+											"id": 79,
+											"name": "handleClick",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 80,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 81,
+															"name": "__type",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"parameters": [
+																{
+																	"id": 82,
+																	"name": "e",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "reference",
+																		"typeArguments": [
+																			{
+																				"type": "reference",
+																				"name": "Element"
+																			},
+																			{
+																				"type": "reference",
+																				"name": "MouseEvent"
+																			}
+																		],
+																		"name": "MouseEvent"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 76,
+											"name": "handleKeyDownBase",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "Element"
+													}
+												],
+												"name": "KeyboardEventHandler"
+											}
+										},
+										{
+											"id": 78,
+											"name": "highlightedIndex",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 69,
+											"name": "isOpen",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										},
+										{
+											"id": 73,
+											"name": "open",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 74,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 75,
+															"name": "__type",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 83,
+											"name": "selectRef",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "S"
+													}
+												],
+												"name": "RefObject"
+											}
+										},
+										{
+											"id": 77,
+											"name": "setHighlightedIndex",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"typeArguments": [
+															{
+																"type": "intrinsic",
+																"name": "number"
+															}
+														],
+														"name": "SetStateAction"
+													}
+												],
+												"name": "Dispatch"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												70,
+												84,
+												79,
+												76,
+												78,
+												69,
+												73,
+												83,
+												77
+											]
+										}
+									]
+								}
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						99,
+						130,
+						122,
+						95,
+						114,
+						135,
+						106
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						85,
+						63
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "core.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 153,
+			"name": "index",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 311,
+					"name": "useAsyncCombobox",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 5,
+							"character": 25
+						}
+					],
+					"target": 155
+				},
+				{
+					"id": 309,
+					"name": "useCombobox",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 3,
+							"character": 20
+						}
+					],
+					"target": 186
+				},
+				{
+					"id": 310,
+					"name": "useMultipleCombobox",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 4,
+							"character": 28
+						}
+					],
+					"target": 224
+				},
+				{
+					"id": 308,
+					"name": "useMultipleSelect",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 2,
+							"character": 26
+						}
+					],
+					"target": 237
+				},
+				{
+					"id": 307,
+					"name": "useSelect",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 1,
+							"character": 18
+						}
+					],
+					"target": 259
+				}
+			],
+			"groups": [
+				{
+					"title": "References",
+					"kind": 16777216,
+					"children": [
+						311,
+						309,
+						310,
+						308,
+						307
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 154,
+			"name": "use-async-combobox",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 165,
+					"name": "Loading",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-async-combobox.ts",
+							"line": 12,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 166,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 167,
+									"name": "loading",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"comment": {
+										"shortText": "True if {@link FetchItems.fetchItems} has been called but promise hasn't resolved yet."
+									},
+									"sources": [
+										{
+											"fileName": "use-async-combobox.ts",
+											"line": 16,
+											"character": 9
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										167
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "use-async-combobox.ts",
+									"line": 12,
+									"character": 21
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 168,
+					"name": "UseAsyncCombobox",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-async-combobox.ts",
+							"line": 19,
+							"character": 28
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 169,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						},
+						{
+							"id": 170,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							},
+							"default": {
+								"type": "reference",
+								"name": "HTMLDivElement"
+							}
+						},
+						{
+							"id": 171,
+							"name": "D",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							},
+							"default": {
+								"type": "reference",
+								"name": "HTMLUListElement"
+							}
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "reference",
+								"id": 204,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									},
+									{
+										"type": "reference",
+										"name": "S"
+									},
+									{
+										"type": "reference",
+										"name": "D"
+									}
+								],
+								"name": "UseCombobox"
+							},
+							{
+								"type": "reference",
+								"id": 165,
+								"name": "Loading"
+							}
+						]
+					}
+				},
+				{
+					"id": 161,
+					"name": "UseAsyncComboboxProps",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-async-combobox.ts",
+							"line": 7,
+							"character": 33
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 164,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "reflection",
+								"declaration": {
+									"id": 162,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 163,
+											"name": "itemToString",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-async-combobox.ts",
+													"line": 7,
+													"character": 53
+												}
+											],
+											"type": {
+												"type": "reference",
+												"id": 48,
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "T"
+													}
+												],
+												"name": "ItemToString"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												163
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "use-async-combobox.ts",
+											"line": 7,
+											"character": 38
+										}
+									]
+								}
+							},
+							{
+								"type": "reference",
+								"id": 106,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "ValueControl"
+							},
+							{
+								"type": "reference",
+								"id": 99,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "FetchItems"
+							},
+							{
+								"type": "reference",
+								"id": 122,
+								"name": "Handlers"
+							},
+							{
+								"type": "reference",
+								"id": 130,
+								"name": "Flags"
+							}
+						]
+					}
+				},
+				{
+					"id": 155,
+					"name": "useAsyncCombobox",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-async-combobox.ts",
+							"line": 40,
+							"character": 32
+						}
+					],
+					"signatures": [
+						{
+							"id": 156,
+							"name": "useAsyncCombobox",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Returns state and callbacks for building combobox component that fetches items asynchronously.",
+								"text": "Internally it uses {@link useCombobox} and {@link useAsyncItems} hooks, but instead of filtering items this hook\ncalls {@link FetchItems.fetchItems} when inputValue changes.\n\n{@link UseAsyncCombobox.items} returned from this hook are latest result of {@link FetchItems.fetchItems} call.\n\nDoesn't control value, instead it is expected that value and onChange function will be provided as a prop to this\nhook. Callbacks that \"change\" value, actually call {@link ValueControl.onChange} function with new value.\n"
+							},
+							"typeParameter": [
+								{
+									"id": 157,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of item"
+									}
+								},
+								{
+									"id": 158,
+									"name": "S",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of select element, defaults to {@link HTMLDivElement}"
+									},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLDivElement"
+									}
+								},
+								{
+									"id": 159,
+									"name": "D",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of dropdown element, defaults to {@link HTMLUListElement}\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLUListElement"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 160,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 161,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "T"
+											}
+										],
+										"name": "UseAsyncComboboxProps"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 168,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									},
+									{
+										"type": "reference",
+										"name": "S"
+									},
+									{
+										"type": "reference",
+										"name": "D"
+									}
+								],
+								"name": "UseAsyncCombobox"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						165,
+						168,
+						161
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						155
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "use-async-combobox.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 172,
+			"name": "use-async-items",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 177,
+					"name": "UseAsyncItemsProps",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-async-items.ts",
+							"line": 5,
+							"character": 30
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 184,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "reference",
+								"id": 99,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "FetchItems"
+							},
+							{
+								"type": "reflection",
+								"declaration": {
+									"id": 178,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 179,
+											"name": "inputValue",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"comment": {
+												"shortText": "Value of combobox input element"
+											},
+											"sources": [
+												{
+													"fileName": "use-async-items.ts",
+													"line": 9,
+													"character": 12
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 180,
+											"name": "setItems",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-async-items.ts",
+													"line": 13,
+													"character": 10
+												}
+											],
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 181,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "use-async-items.ts",
+															"line": 13,
+															"character": 11
+														}
+													],
+													"signatures": [
+														{
+															"id": 182,
+															"name": "__type",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"comment": {
+																"shortText": "Updates items state"
+															},
+															"parameters": [
+																{
+																	"id": 183,
+																	"name": "items",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "array",
+																		"elementType": {
+																			"type": "reference",
+																			"name": "T"
+																		}
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													]
+												}
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												179,
+												180
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "use-async-items.ts",
+											"line": 5,
+											"character": 51
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": 173,
+					"name": "useAsyncItems",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-async-items.ts",
+							"line": 21,
+							"character": 29
+						}
+					],
+					"signatures": [
+						{
+							"id": 174,
+							"name": "useAsyncItems",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Fetches items when inputValue changes and calls setItems to update items state.",
+								"returns": "loading flag that indicates that request is in progress\n"
+							},
+							"typeParameter": [
+								{
+									"id": 175,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {}
+								}
+							],
+							"parameters": [
+								{
+									"id": 176,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 177,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "T"
+											}
+										],
+										"name": "UseAsyncItemsProps"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						177
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						173
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "use-async-items.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 185,
+			"name": "use-combobox",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 204,
+					"name": "UseCombobox",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-combobox.ts",
+							"line": 31,
+							"character": 23
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 205,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						},
+						{
+							"id": 206,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							},
+							"default": {
+								"type": "reference",
+								"name": "HTMLDivElement"
+							}
+						},
+						{
+							"id": 207,
+							"name": "D",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							},
+							"default": {
+								"type": "reference",
+								"name": "HTMLUListElement"
+							}
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "reference",
+								"id": 267,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									},
+									{
+										"type": "reference",
+										"name": "S"
+									},
+									{
+										"type": "reference",
+										"name": "D"
+									}
+								],
+								"name": "UseSelect"
+							},
+							{
+								"type": "reference",
+								"id": 194,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "UseComboboxReturnValue"
+							}
+						]
+					}
+				},
+				{
+					"id": 192,
+					"name": "UseComboboxProps",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-combobox.ts",
+							"line": 12,
+							"character": 28
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 193,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "reference",
+								"id": 265,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "UseSelectProps"
+							},
+							{
+								"type": "reference",
+								"id": 53,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "ComboboxFunctions"
+							}
+						]
+					}
+				},
+				{
+					"id": 194,
+					"name": "UseComboboxReturnValue",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-combobox.ts",
+							"line": 13,
+							"character": 34
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 203,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 195,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 197,
+									"name": "inputRef",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"comment": {
+										"shortText": "Ref that needs to be applied to combobox input element"
+									},
+									"sources": [
+										{
+											"fileName": "use-combobox.ts",
+											"line": 21,
+											"character": 10
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "HTMLInputElement"
+											}
+										],
+										"name": "RefObject"
+									}
+								},
+								{
+									"id": 198,
+									"name": "inputValue",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"comment": {
+										"shortText": "Value of input element"
+									},
+									"sources": [
+										{
+											"fileName": "use-combobox.ts",
+											"line": 25,
+											"character": 12
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 196,
+									"name": "items",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"comment": {
+										"shortText": "Items filtered by {@link ComboboxFunctions.filter}, or in case of async combobox result of fetchItems"
+									},
+									"sources": [
+										{
+											"fileName": "use-combobox.ts",
+											"line": 17,
+											"character": 7
+										}
+									],
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "T"
+										}
+									}
+								},
+								{
+									"id": 199,
+									"name": "setInputValue",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "use-combobox.ts",
+											"line": 29,
+											"character": 15
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 200,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-combobox.ts",
+													"line": 29,
+													"character": 16
+												}
+											],
+											"signatures": [
+												{
+													"id": 201,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "Saves given value in inputValue state"
+													},
+													"parameters": [
+														{
+															"id": 202,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										197,
+										198,
+										196,
+										199
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "use-combobox.ts",
+									"line": 13,
+									"character": 39
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 186,
+					"name": "useCombobox",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-combobox.ts",
+							"line": 52,
+							"character": 27
+						}
+					],
+					"signatures": [
+						{
+							"id": 187,
+							"name": "useCombobox",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Hook that returns state and callbacks for controlling combobox component. Updates inputValue according to provided\nvalue (currently selected item). This keeps inputValue and value state in sync whenever an item is selected, or value\nwas changed by some code.",
+								"text": "Internally it uses {@link useSelect}, {@link useComboboxBase}, {@link useInputValueState} and\n{@link useInputValueHandler} hooks.\n\nDoesn't control value, instead it is expected that value and onChange function will be provided as a prop to this\nhook. Callbacks that \"change\" value, actually call {@link ValueControl.onChange} function with new value.\n"
+							},
+							"typeParameter": [
+								{
+									"id": 188,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of item"
+									}
+								},
+								{
+									"id": 189,
+									"name": "S",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of select element, defaults to {@link HTMLDivElement}"
+									},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLDivElement"
+									}
+								},
+								{
+									"id": 190,
+									"name": "D",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of dropdown element, defaults to {@link HTMLUListElement}\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLUListElement"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 191,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 192,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "T"
+											}
+										],
+										"name": "UseComboboxProps"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 204,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									},
+									{
+										"type": "reference",
+										"name": "S"
+									},
+									{
+										"type": "reference",
+										"name": "D"
+									}
+								],
+								"name": "UseCombobox"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						204,
+						192,
+						194
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						186
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "use-combobox.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 208,
+			"name": "use-multiple-async-combobox",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 219,
+					"name": "UseMultipleAsyncCombobox",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"comment": {
+						"shortText": "Similar to {@link useMultipleCombobox} only this hook fetches new items on inputValue change.",
+						"text": "Uses {@link useMultipleCombobox} and {@link useAsyncItems} internally.\n\nDoesn't control value, instead it is expected that value and onChange function will be provided as a prop to this\nhook. Callbacks that \"change\" value, actually call {@link MultiValueControl.onChange} function with new value.\n"
+					},
+					"sources": [
+						{
+							"fileName": "use-multiple-async-combobox.ts",
+							"line": 25,
+							"character": 36
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 220,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"comment": {
+								"text": "type of item"
+							}
+						},
+						{
+							"id": 221,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"comment": {
+								"text": "type of select element, defaults to {@link HTMLDivElement}"
+							},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							},
+							"default": {
+								"type": "reference",
+								"name": "HTMLDivElement"
+							}
+						},
+						{
+							"id": 222,
+							"name": "D",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"comment": {
+								"text": "type of dropdown element, defaults to {@link HTMLUListElement}\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							},
+							"default": {
+								"type": "reference",
+								"name": "HTMLUListElement"
+							}
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "reference",
+								"id": 232,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									},
+									{
+										"type": "reference",
+										"name": "S"
+									},
+									{
+										"type": "reference",
+										"name": "D"
+									}
+								],
+								"name": "UseMultipleCombobox"
+							},
+							{
+								"type": "reference",
+								"id": 165,
+								"name": "Loading"
+							}
+						]
+					}
+				},
+				{
+					"id": 215,
+					"name": "UseMultipleAsyncComboboxProps",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-multiple-async-combobox.ts",
+							"line": 8,
+							"character": 41
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 218,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "reflection",
+								"declaration": {
+									"id": 216,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 217,
+											"name": "itemToString",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-multiple-async-combobox.ts",
+													"line": 8,
+													"character": 61
+												}
+											],
+											"type": {
+												"type": "reference",
+												"id": 48,
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "T"
+													}
+												],
+												"name": "ItemToString"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												217
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "use-multiple-async-combobox.ts",
+											"line": 8,
+											"character": 46
+										}
+									]
+								}
+							},
+							{
+								"type": "reference",
+								"id": 114,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "MultiValueControl"
+							},
+							{
+								"type": "reference",
+								"id": 99,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "FetchItems"
+							},
+							{
+								"type": "reference",
+								"id": 122,
+								"name": "Handlers"
+							},
+							{
+								"type": "reference",
+								"id": 130,
+								"name": "Flags"
+							}
+						]
+					}
+				},
+				{
+					"id": 209,
+					"name": "useMultipleAsyncCombobox",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-multiple-async-combobox.ts",
+							"line": 31,
+							"character": 40
+						}
+					],
+					"signatures": [
+						{
+							"id": 210,
+							"name": "useMultipleAsyncCombobox",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"typeParameter": [
+								{
+									"id": 211,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {}
+								},
+								{
+									"id": 212,
+									"name": "S",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLDivElement"
+									}
+								},
+								{
+									"id": 213,
+									"name": "D",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLUListElement"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 214,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 215,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "T"
+											}
+										],
+										"name": "UseMultipleAsyncComboboxProps"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 219,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									},
+									{
+										"type": "reference",
+										"name": "S"
+									},
+									{
+										"type": "reference",
+										"name": "D"
+									}
+								],
+								"name": "UseMultipleAsyncCombobox"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						219,
+						215
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						209
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "use-multiple-async-combobox.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 223,
+			"name": "use-multiple-combobox",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 232,
+					"name": "UseMultipleCombobox",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-multiple-combobox.ts",
+							"line": 13,
+							"character": 31
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 233,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						},
+						{
+							"id": 234,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							},
+							"default": {
+								"type": "reference",
+								"name": "HTMLDivElement"
+							}
+						},
+						{
+							"id": 235,
+							"name": "D",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							},
+							"default": {
+								"type": "reference",
+								"name": "HTMLUListElement"
+							}
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "reference",
+								"id": 245,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									},
+									{
+										"type": "reference",
+										"name": "S"
+									},
+									{
+										"type": "reference",
+										"name": "D"
+									}
+								],
+								"name": "UseMultipleSelect"
+							},
+							{
+								"type": "reference",
+								"id": 194,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "UseComboboxReturnValue"
+							}
+						]
+					}
+				},
+				{
+					"id": 230,
+					"name": "UseMultipleComboboxProps",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-multiple-combobox.ts",
+							"line": 12,
+							"character": 36
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 231,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "reference",
+								"id": 243,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "UseMultipleSelectProps"
+							},
+							{
+								"type": "reference",
+								"id": 53,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "ComboboxFunctions"
+							}
+						]
+					}
+				},
+				{
+					"id": 224,
+					"name": "useMultipleCombobox",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-multiple-combobox.ts",
+							"line": 33,
+							"character": 35
+						}
+					],
+					"signatures": [
+						{
+							"id": 225,
+							"name": "useMultipleCombobox",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Provides state and callbacks for combobox with multiple selection. When value prop changes, inputValue is set to\nempty string, thus allowing for selection of new item.",
+								"text": "Internally it uses {@link useComboboxBase}, {@link useInputValueState}, {@link useInputValueHandler} and\n{@link useMultipleSelect}.\n\nDoesn't control value, instead it is expected that value and onChange function will be provided as a prop to this\nhook. Callbacks that \"change\" value, actually call {@link MultiValueControl.onChange} function with new value.\n"
+							},
+							"typeParameter": [
+								{
+									"id": 226,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of item"
+									}
+								},
+								{
+									"id": 227,
+									"name": "S",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of select element, defaults to {@link HTMLDivElement}"
+									},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLDivElement"
+									}
+								},
+								{
+									"id": 228,
+									"name": "D",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of dropdown element, defaults to {@link HTMLUListElement}\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLUListElement"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 229,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 230,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "T"
+											}
+										],
+										"name": "UseMultipleComboboxProps"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 232,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									},
+									{
+										"type": "reference",
+										"name": "S"
+									},
+									{
+										"type": "reference",
+										"name": "D"
+									}
+								],
+								"name": "UseMultipleCombobox"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						232,
+						230
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						224
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "use-multiple-combobox.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 236,
+			"name": "use-multiple-select",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 245,
+					"name": "UseMultipleSelect",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-multiple-select.ts",
+							"line": 7,
+							"character": 29
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 255,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						},
+						{
+							"id": 256,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							},
+							"default": {
+								"type": "reference",
+								"name": "HTMLDivElement"
+							}
+						},
+						{
+							"id": 257,
+							"name": "D",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							},
+							"default": {
+								"type": "reference",
+								"name": "HTMLUListElement"
+							}
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 267,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "T"
+											},
+											{
+												"type": "reference",
+												"name": "S"
+											},
+											{
+												"type": "reference",
+												"name": "D"
+											}
+										],
+										"name": "UseSelect"
+									},
+									{
+										"type": "literal",
+										"value": "remove"
+									}
+								],
+								"name": "Omit"
+							},
+							{
+								"type": "reflection",
+								"declaration": {
+									"id": 246,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 251,
+											"name": "remove",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-multiple-select.ts",
+													"line": 19,
+													"character": 8
+												}
+											],
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 252,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "use-multiple-select.ts",
+															"line": 19,
+															"character": 9
+														}
+													],
+													"signatures": [
+														{
+															"id": 253,
+															"name": "__type",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"comment": {
+																"shortText": "Calls {@link MultiValueControl.onChange} with new array without provided item"
+															},
+															"parameters": [
+																{
+																	"id": 254,
+																	"name": "item",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "reference",
+																		"name": "T"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													]
+												}
+											}
+										},
+										{
+											"id": 247,
+											"name": "removeByIndex",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-multiple-select.ts",
+													"line": 15,
+													"character": 15
+												}
+											],
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 248,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "use-multiple-select.ts",
+															"line": 15,
+															"character": 16
+														}
+													],
+													"signatures": [
+														{
+															"id": 249,
+															"name": "__type",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"comment": {
+																"shortText": "Calls {@link MultiValueControl.onChange} with new array without the item at provided index"
+															},
+															"parameters": [
+																{
+																	"id": 250,
+																	"name": "index",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "number"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													]
+												}
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												251,
+												247
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "use-multiple-select.ts",
+											"line": 11,
+											"character": 40
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": 243,
+					"name": "UseMultipleSelectProps",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-multiple-select.ts",
+							"line": 5,
+							"character": 34
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 244,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "reference",
+								"id": 95,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "Items"
+							},
+							{
+								"type": "reference",
+								"id": 114,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "MultiValueControl"
+							},
+							{
+								"type": "reference",
+								"id": 122,
+								"name": "Handlers"
+							},
+							{
+								"type": "reference",
+								"id": 130,
+								"name": "Flags"
+							}
+						]
+					}
+				},
+				{
+					"id": 237,
+					"name": "useMultipleSelect",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-multiple-select.ts",
+							"line": 34,
+							"character": 33
+						}
+					],
+					"signatures": [
+						{
+							"id": 238,
+							"name": "useMultipleSelect",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Allows selection of multiple items. Useful for building multiple select component.",
+								"text": "Internally it uses {@link useSelectBase} and {@link useHandlers} hooks.\n\nDoesn't control value, instead it is expected that value and onChange function will be provided as a prop to this\nhook. Callbacks that \"change\" value, actually call {@link MultiValueControl.onChange} function with new value.\n"
+							},
+							"typeParameter": [
+								{
+									"id": 239,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of item"
+									}
+								},
+								{
+									"id": 240,
+									"name": "S",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of select element, defaults to {@link HTMLDivElement}"
+									},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLDivElement"
+									}
+								},
+								{
+									"id": 241,
+									"name": "D",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of dropdown element, defaults to {@link HTMLUListElement}\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLUListElement"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 242,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 243,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "T"
+											}
+										],
+										"name": "UseMultipleSelectProps"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 245,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									},
+									{
+										"type": "reference",
+										"name": "S"
+									},
+									{
+										"type": "reference",
+										"name": "D"
+									}
+								],
+								"name": "UseMultipleSelect"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						245,
+						243
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						237
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "use-multiple-select.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 258,
+			"name": "use-select",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 267,
+					"name": "UseSelect",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-select.ts",
+							"line": 6,
+							"character": 21
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 304,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						},
+						{
+							"id": 305,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							},
+							"default": {
+								"type": "reference",
+								"name": "HTMLDivElement"
+							}
+						},
+						{
+							"id": 306,
+							"name": "D",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							},
+							"default": {
+								"type": "reference",
+								"name": "HTMLUListElement"
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 268,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 283,
+									"name": "clear",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "use-select.ts",
+											"line": 39,
+											"character": 7
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 284,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-select.ts",
+													"line": 39,
+													"character": 8
+												}
+											],
+											"signatures": [
+												{
+													"id": 285,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "Calls onChange with undefined param or with empty array in case of multiple select/combobox. Works only if\nclearable is true. Prevents propagation and default of event param.",
+														"text": "Use this on clear icon or button of your select/combobox.\n"
+													},
+													"parameters": [
+														{
+															"id": 286,
+															"name": "e",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "ReactMouseEvent"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 299,
+									"name": "dropdownRef",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"comment": {
+										"shortText": "Ref for dropdown element, used internally to allow closing of dropdown on outside click and scrolling to\nhighlighted index item when using arrow keys to highlighted items."
+									},
+									"sources": [
+										{
+											"fileName": "use-select.ts",
+											"line": 60,
+											"character": 13
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "D"
+											}
+										],
+										"name": "RefObject"
+									}
+								},
+								{
+									"id": 272,
+									"name": "handleClick",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "use-select.ts",
+											"line": 24,
+											"character": 13
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 273,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-select.ts",
+													"line": 24,
+													"character": 14
+												}
+											],
+											"signatures": [
+												{
+													"id": 274,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "Handler for button that opens/closes dropdown, toggles isOpen. Prevents propagation and default of event param."
+													},
+													"parameters": [
+														{
+															"id": 275,
+															"name": "e",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "ReactMouseEvent"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 294,
+									"name": "handleItemClick",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "use-select.ts",
+											"line": 51,
+											"character": 17
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 295,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-select.ts",
+													"line": 51,
+													"character": 18
+												}
+											],
+											"signatures": [
+												{
+													"id": 296,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "If given item is selected then removes it removes given item, if item is not selected then it selects given item."
+													},
+													"parameters": [
+														{
+															"id": 297,
+															"name": "item",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "T"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 271,
+									"name": "handleKeyDown",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"comment": {
+										"shortText": "Handles ArrowUp, ArrowDown, Enter and Escape key down event, apply to select and dropdown element\n(add tabIndex=0 to allow key events on div element)"
+									},
+									"sources": [
+										{
+											"fileName": "use-select.ts",
+											"line": 20,
+											"character": 15
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "never"
+											}
+										],
+										"name": "KeyboardEventHandler"
+									}
+								},
+								{
+									"id": 270,
+									"name": "highlightedIndex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"comment": {
+										"shortText": "Index of currently highlighted item, used for keyboard control, ArrowUp key decreases this, while ArrowDown key\nincreases it"
+									},
+									"sources": [
+										{
+											"fileName": "use-select.ts",
+											"line": 15,
+											"character": 18
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 269,
+									"name": "isOpen",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"comment": {
+										"shortText": "Indicates whether dropdown is open or not"
+									},
+									"sources": [
+										{
+											"fileName": "use-select.ts",
+											"line": 10,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								},
+								{
+									"id": 290,
+									"name": "isSelected",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "use-select.ts",
+											"line": 47,
+											"character": 12
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 291,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-select.ts",
+													"line": 47,
+													"character": 13
+												}
+											],
+											"signatures": [
+												{
+													"id": 292,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "Checks if item === value"
+													},
+													"parameters": [
+														{
+															"id": 293,
+															"name": "item",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "T"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 287,
+									"name": "open",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "use-select.ts",
+											"line": 43,
+											"character": 6
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 288,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-select.ts",
+													"line": 43,
+													"character": 7
+												}
+											],
+											"signatures": [
+												{
+													"id": 289,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "Sets isOpen to true. Only works if disabled and readOnly are falsy."
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 280,
+									"name": "remove",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "use-select.ts",
+											"line": 32,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 281,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-select.ts",
+													"line": 32,
+													"character": 9
+												}
+											],
+											"signatures": [
+												{
+													"id": 282,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "Calls onChange with undefined param. Works only if clearable is true."
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 276,
+									"name": "select",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "use-select.ts",
+											"line": 28,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 277,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-select.ts",
+													"line": 28,
+													"character": 9
+												}
+											],
+											"signatures": [
+												{
+													"id": 278,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "Calls onChange with provided item"
+													},
+													"parameters": [
+														{
+															"id": 279,
+															"name": "item",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "T"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 298,
+									"name": "selectRef",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"comment": {
+										"shortText": "Ref for combobox element, used internally to allow closing of dropdown on outside click"
+									},
+									"sources": [
+										{
+											"fileName": "use-select.ts",
+											"line": 55,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "S"
+											}
+										],
+										"name": "RefObject"
+									}
+								},
+								{
+									"id": 300,
+									"name": "setHighlightedIndex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "use-select.ts",
+											"line": 64,
+											"character": 21
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 301,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "use-select.ts",
+													"line": 64,
+													"character": 22
+												}
+											],
+											"signatures": [
+												{
+													"id": 302,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"shortText": "Sets highlighted index state to provided index"
+													},
+													"parameters": [
+														{
+															"id": 303,
+															"name": "index",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										283,
+										299,
+										272,
+										294,
+										271,
+										270,
+										269,
+										290,
+										287,
+										280,
+										276,
+										298,
+										300
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "use-select.ts",
+									"line": 6,
+									"character": 108
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 265,
+					"name": "UseSelectProps",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-select.ts",
+							"line": 4,
+							"character": 26
+						}
+					],
+					"typeParameter": [
+						{
+							"id": 266,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "reference",
+								"id": 95,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "Items"
+							},
+							{
+								"type": "reference",
+								"id": 106,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									}
+								],
+								"name": "ValueControl"
+							},
+							{
+								"type": "reference",
+								"id": 122,
+								"name": "Handlers"
+							},
+							{
+								"type": "reference",
+								"id": 130,
+								"name": "Flags"
+							}
+						]
+					}
+				},
+				{
+					"id": 259,
+					"name": "useSelect",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "use-select.ts",
+							"line": 79,
+							"character": 25
+						}
+					],
+					"signatures": [
+						{
+							"id": 260,
+							"name": "useSelect",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Provides callbacks and state for controlling select component.",
+								"text": "Internally it uses {@link useSelectBase} and {@link useHandlers} hooks.\n\nDoesn't control value, instead it is expected that value and onChange function will be provided as a prop to this\nhook. Callbacks that \"change\" value, actually call {@link ValueControl.onChange} function with new value.\n"
+							},
+							"typeParameter": [
+								{
+									"id": 261,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of item"
+									}
+								},
+								{
+									"id": 262,
+									"name": "S",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of select element, defaults to {@link HTMLDivElement}"
+									},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLDivElement"
+									}
+								},
+								{
+									"id": 263,
+									"name": "D",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"comment": {
+										"text": "type of dropdown element, defaults to {@link HTMLUListElement}\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									"default": {
+										"type": "reference",
+										"name": "HTMLUListElement"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 264,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 265,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "T"
+											}
+										],
+										"name": "UseSelectProps"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 267,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "T"
+									},
+									{
+										"type": "reference",
+										"name": "S"
+									},
+									{
+										"type": "reference",
+										"name": "D"
+									}
+								],
+								"name": "UseSelect"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						267,
+						265
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						259
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "use-select.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Modules",
+			"kind": 1,
+			"children": [
+				1,
+				62,
+				153,
+				154,
+				172,
+				185,
+				208,
+				223,
+				236,
+				258
+			]
+		}
+	]
+}

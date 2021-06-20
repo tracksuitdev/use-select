@@ -1,0 +1,417 @@
+# use-select
+React hooks for building select and combobox components.
+
+* [useSelect](#useselect)
+* [useMultipleSelect](#usemultipleselect)
+* [useCombobox](#usecombobox)
+* [useMultipleCombobox](#usemultiplecombobox)
+* [useAsyncCombobox](#useasynccombobox)
+* [useMultipleAsyncCombobox](#usemultipleasynccombobox)
+
+
+## useSelect
+
+▸ **useSelect**<T, S, D\>(`props`: [`UseSelectProps<T>`](#props): [UseSelect](#use-select)<T, S, D\>
+
+Provides callbacks and state for controlling select component.
+
+Doesn't control value, instead it is expected that value and onChange function will be provided as a prop to this
+hook. Callbacks that "change" value, actually call function with new value.
+
+### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` - type of items |
+| `S` | `S`: `HTMLElement` = `HTMLDivElement` - type of select element |
+| `D` | `D`: `HTMLElement` = `HTMLUListElement`- type of dropdown element |
+
+
+### Props
+**UseSelectProps**<T\> = [`Items<T>`]() & `ValueControl<T>` & `Handlers` & `Flags`
+
+### Return value
+**UseSelect**<T, S, D\>
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `clear` | (`e`: `ReactMouseEvent`) => `void` | Calls onChange with undefined or empty array value in case of multiple selection. Prevents event propagation |
+| `dropdownRef` | `RefObject`<D\> | Ref for dropdown element, used internally to allow closing of dropdown on outside click and scrolling to highlighted index item when using arrow keys to highlighted items. |
+| `handleClick` | (`e`: `ReactMouseEvent`) => `void` | Toggles isOpen flag, prevents event propagation |
+| `handleItemClick` | (`item`: `T`) => `void` | Calls select if item isn't selected or remove if item is selected |
+| `handleKeyDown` | `KeyboardEventHandler`<never\> | Handles ArrowUp, ArrowDown, Enter and Escape key down event, apply to select and dropdown element (add tabIndex=0 to allow key events on div element) |
+| `highlightedIndex` | `number` | Index of currently highlighted item, used for keyboard control, ArrowUp key decreases this, while ArrowDown key increases it |
+| `isOpen` | `boolean` | Indicates whether dropdown is open or not |
+| `isSelected` | (`item`: `T`) => `boolean` | Returns true if item equals value, or in case of multiple selection, if item is part of value array |
+| `open` | () => `void` | Sets isOpen to true |
+| `remove` | () => `void` | Calls onChange with value set to undefined |
+| `select` | (`item`: `T`) => `void` | Calls onChange with provided item set as value |
+| `selectRef` | `RefObject`<S\> | Ref for combobox element, used internally to allow closing of dropdown on outside click |
+| `setHighlightedIndex` | (`index`: `number`) => `void` | Sets highlightedIndex to provided index |
+
+
+## Usage
+
+Examples with basic styling and markup.
+
+### select
+ ```typescript jsx
+
+const Select = () => {
+  const [value, setValue] = useState<string>();
+  const {
+    selectRef,
+    open,
+    handleKeyDown,
+    isOpen,
+    handleClick,
+    dropdownRef,
+    handleItemClick,
+    isSelected,
+    highlightedIndex,
+  } = useSelect({
+    items: ["item1", "item2", "item3"],
+    onChange: value => setValue(value),
+    value,
+  });
+
+  return (
+    <div>
+      <div ref={selectRef} tabIndex={0} onFocus={open} onKeyDown={handleKeyDown}>
+        {value}
+        <button onFocus={e => e.stopPropagation()} onClick={handleClick}>
+          {isOpen ? <span>&#9650;</span> : <span>&#9660;</span>}
+        </button>
+      </div>
+      {isOpen && ( // dropdown
+        <ul
+          ref={dropdownRef}
+          tabIndex={0}
+          onKeyDown={handleKeyDown}
+          style={{ width: "400px", backgroundColor: "grey" }}>
+          {items.map((item, index) => (
+            <li
+              key={item}
+              onClick={() => handleItemClick(item)}
+              style={{
+                color: isSelected(item) ? "blue" : "black",
+                backgroundColor: highlightedIndex === index ? "green" : "grey",
+                cursor: "pointer",
+              }}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+````
+
+### multiple select
+
+```typescript jsx
+const MultipleSelect = () => {
+  const [value, setValue] = useState<string[]>();
+  const {
+    selectRef,
+    dropdownRef,
+    isOpen,
+    open,
+    handleKeyDown,
+    handleClick,
+    handleItemClick,
+    isSelected,
+    highlightedIndex,
+  } = useMultipleSelect({
+    items,
+    onChange: value => setValue(value),
+    value,
+  });
+
+  return (
+    <div>
+      <div ref={selectRef} tabIndex={0} onFocus={open} onKeyDown={handleKeyDown}>
+        {value?.join(", ")}
+        <button onFocus={e => e.stopPropagation()} onClick={handleClick}>
+          {isOpen ? <span>&#9650;</span> : <span>&#9660;</span>}
+        </button>
+      </div>
+      {isOpen && (
+        <ul
+          ref={dropdownRef}
+          tabIndex={0}
+          onKeyDown={handleKeyDown}
+          style={{ width: "400px", backgroundColor: "grey" }}>
+          {items.map((item, index) => (
+            <li
+              key={item}
+              onClick={() => handleItemClick(item)}
+              style={{
+                color: isSelected(item) ? "blue" : "black",
+                backgroundColor: highlightedIndex === index ? "green" : "grey",
+                cursor: "pointer",
+              }}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+```
+### combobox
+```typescript jsx
+const Combobox = () => {
+  const [value, setValue] = useState<string>();
+  const {
+    selectRef,
+    dropdownRef,
+    inputRef,
+    inputValue,
+    open,
+    setInputValue,
+    handleKeyDown,
+    handleClick,
+    handleItemClick,
+    isSelected,
+    highlightedIndex,
+    isOpen,
+    items,
+  } = useCombobox({
+    items: comboboxItems,
+    value,
+    onChange: value => setValue(value),
+    itemToString: item => item ?? "",
+  });
+
+  return (
+    <div>
+      <div ref={selectRef} tabIndex={0} onFocus={open} onKeyDown={handleKeyDown}>
+        <input value={inputValue} onChange={({ target: { value } }) => setInputValue(value)} ref={inputRef} />
+        <button onFocus={e => e.stopPropagation()} onClick={handleClick}>
+          {isOpen ? <span>&#9650;</span> : <span>&#9660;</span>}
+        </button>
+      </div>
+      {isOpen && (
+        <ul
+          ref={dropdownRef}
+          tabIndex={0}
+          onKeyDown={handleKeyDown}
+          style={{ width: "400px", backgroundColor: "grey" }}>
+          {items.map((item, index) => (
+            <li
+              key={item}
+              onClick={() => handleItemClick(item)}
+              style={{
+                color: isSelected(item) ? "blue" : "black",
+                backgroundColor: highlightedIndex === index ? "green" : "grey",
+                cursor: "pointer",
+              }}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+```
+### combobox with multiple selection
+```typescript jsx
+const MultipleCombobox = () => {
+  const [value, setValue] = useState<string[]>();
+  const {
+    selectRef,
+    dropdownRef,
+    inputRef,
+    open,
+    isOpen,
+    highlightedIndex,
+    inputValue,
+    setInputValue,
+    items,
+    isSelected,
+    handleItemClick,
+    handleClick,
+    handleKeyDown,
+  } = useMultipleCombobox({
+    items: comboboxItems,
+    itemToString: item => item ?? "",
+    value,
+    onChange: setValue,
+  });
+
+  return (
+    <div>
+      <div ref={selectRef} tabIndex={0} onFocus={open} onKeyDown={handleKeyDown}>
+        {value?.join(", ")}
+        <input value={inputValue} onChange={({ target: { value } }) => setInputValue(value)} ref={inputRef} />
+        <button onFocus={e => e.stopPropagation()} onClick={handleClick}>
+          {isOpen ? <span>&#9650;</span> : <span>&#9660;</span>}
+        </button>
+      </div>
+      {isOpen && (
+        <ul
+          ref={dropdownRef}
+          tabIndex={0}
+          onKeyDown={handleKeyDown}
+          style={{ width: "400px", backgroundColor: "grey" }}>
+          {items.map((item, index) => (
+            <li
+              key={item}
+              onClick={() => handleItemClick(item)}
+              style={{
+                color: isSelected(item) ? "blue" : "black",
+                backgroundColor: highlightedIndex === index ? "green" : "grey",
+                cursor: "pointer",
+              }}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+```
+### async combobox
+```typescript jsx
+const AsyncCombobox = () => {
+  const [value, setValue] = useState<string>();
+  const {
+    selectRef,
+    dropdownRef,
+    inputRef,
+    inputValue,
+    open,
+    setInputValue,
+    handleKeyDown,
+    handleClick,
+    handleItemClick,
+    isSelected,
+    highlightedIndex,
+    isOpen,
+    items,
+    loading,
+  } = useAsyncCombobox({
+    fetchItems: async _ => {
+      const promise = new Promise<void>(resolve => {
+        setTimeout(() => {
+          resolve();
+        }, 100);
+      });
+      const [result] = await Promise.all([Promise.resolve(comboboxItems), promise]);
+
+      return result;
+    },
+    value,
+    onChange: value => setValue(value),
+    itemToString: item => item ?? "",
+  });
+
+  return (
+    <div>
+      <div ref={selectRef} tabIndex={0} onFocus={open} onKeyDown={handleKeyDown}>
+        <input value={inputValue} onChange={({ target: { value } }) => setInputValue(value)} ref={inputRef} />
+        <button onFocus={e => e.stopPropagation()} onClick={handleClick}>
+          {isOpen ? <span>&#9650;</span> : <span>&#9660;</span>}
+        </button>
+      </div>
+      {isOpen && (
+        <ul
+          ref={dropdownRef}
+          tabIndex={0}
+          onKeyDown={handleKeyDown}
+          style={{ width: "400px", backgroundColor: "grey" }}>
+          {loading
+            ? "Loading..."
+            : items.map((item, index) => (
+                <li
+                  key={item}
+                  onClick={() => handleItemClick(item)}
+                  style={{
+                    color: isSelected(item) ? "blue" : "black",
+                    backgroundColor: highlightedIndex === index ? "green" : "grey",
+                    cursor: "pointer",
+                  }}>
+                  {item}
+                </li>
+              ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+```
+### async combobox with multiple selection
+```typescript jsx
+const MultipleAsyncCombobox = () => {
+  const [value, setValue] = useState<string[]>();
+  const {
+    selectRef,
+    dropdownRef,
+    inputRef,
+    inputValue,
+    open,
+    setInputValue,
+    handleKeyDown,
+    handleClick,
+    handleItemClick,
+    isSelected,
+    highlightedIndex,
+    isOpen,
+    items,
+    loading,
+  } = useMultipleAsyncCombobox({
+    fetchItems: async _ => {
+      const promise = new Promise<void>(resolve => {
+        setTimeout(() => {
+          resolve();
+        }, 100);
+      });
+      const [result] = await Promise.all([Promise.resolve(comboboxItems), promise]);
+
+      return result;
+    },
+    value,
+    onChange: value => setValue(value),
+    itemToString: item => item ?? "",
+  });
+
+  return (
+    <div>
+      <div ref={selectRef} tabIndex={0} onFocus={open} onKeyDown={handleKeyDown}>
+        {value?.join(", ")}
+        <input value={inputValue} onChange={({ target: { value } }) => setInputValue(value)} ref={inputRef} />
+        <button onFocus={e => e.stopPropagation()} onClick={handleClick}>
+          {isOpen ? <span>&#9650;</span> : <span>&#9660;</span>}
+        </button>
+      </div>
+      {isOpen && (
+        <ul
+          ref={dropdownRef}
+          tabIndex={0}
+          onKeyDown={handleKeyDown}
+          style={{ width: "400px", backgroundColor: "grey" }}>
+          {loading
+            ? "Loading..."
+            : items.map((item, index) => (
+                <li
+                  key={item}
+                  onClick={() => handleItemClick(item)}
+                  style={{
+                    color: isSelected(item) ? "blue" : "black",
+                    backgroundColor: highlightedIndex === index ? "green" : "grey",
+                    cursor: "pointer",
+                  }}>
+                  {item}
+                </li>
+              ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+```
