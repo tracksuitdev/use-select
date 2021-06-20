@@ -8,10 +8,9 @@ React hooks for building select and combobox components.
 * [useAsyncCombobox](#useasynccombobox)
 * [useMultipleAsyncCombobox](#usemultipleasynccombobox)
 
-
 ## useSelect
 
-▸ **useSelect**<T, S, D\>(`props`: [`UseSelectProps<T>`](#props): [UseSelect](#use-select)<T, S, D\>
+▸ **useSelect**<T, S, D\>(`props`: [`UseSelectProps<T>`](#props)): [UseSelect](#use-select)<T, S, D\>
 
 Provides callbacks and state for controlling select component.
 
@@ -28,7 +27,7 @@ hook. Callbacks that "change" value, actually call function with new value.
 
 
 ### Props
-**UseSelectProps**<T\> = [`Items<T>`]() & `ValueControl<T>` & `Handlers` & `Flags`
+**UseSelectProps**<T\> = [`Items<T>`](#items-1) & [`ValueControl<T>`](#ValueControl) & `Handlers` & `Flags`
 
 ### Return value
 **UseSelect**<T, S, D\>
@@ -48,7 +47,6 @@ hook. Callbacks that "change" value, actually call function with new value.
 | `select` | (`item`: `T`) => `void` | Calls onChange with provided item set as value |
 | `selectRef` | `RefObject`<S\> | Ref for combobox element, used internally to allow closing of dropdown on outside click |
 | `setHighlightedIndex` | (`index`: `number`) => `void` | Sets highlightedIndex to provided index |
-
 
 ## Usage
 
@@ -415,3 +413,90 @@ const MultipleAsyncCombobox = () => {
   );
 };
 ```
+## Common Types
+
+### FetchItems<T\>
+
+#### Type parameters
+
+| Name | Description |
+| :------ | :------ |
+| `T` | Type of items |
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `fetchItems` | (`query`: `string`) => `Promise`<T[]\> | Fetch items asynchronously |
+
+___
+
+### Flags
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `clearable?` | `boolean` | If true value can be set to undefined for {@link ValueControl.value}, and for {@link MultiValueControl.value} can be set to an empty array. Note that for {@link MultiValueControl.value} case it is still possible to set value to an empty array by calling remove or removeByIndex on every selected item. |
+| `disabled?` | `boolean` | If true open function does nothing, same as readOnly, provided as separate prop for convenience |
+| `readOnly?` | `boolean` | If true open function does nothing, same as disabled, provided as separate prop for convenience |
+
+___
+
+### Handlers
+
+| Name | Type | Description |
+| :------ | :------ | :------ | 
+| `onClose?` | () => `void` | This function is called when isOpen is set to `false` |
+| `onOpen?` | () => `void` | This function is called when isOpen is set to `true` |
+
+___
+
+### Items<T\>
+
+#### Type parameters
+
+| Name | Description |
+| :------ | :------ | 
+| `T` | Type of items |
+
+| Name | Type | Description |
+| :------ | :------ | :------ | 
+| `items` | `T`[] | Options that can be selected |
+
+___
+
+### MultiValueControl<T\>
+
+onChange handler and value type for hooks where multiple selection is allowed
+
+#### Type parameters
+
+| Name | Description |
+| :------ | :------ | 
+| `T` | Type of items |
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `onChange?` | (`value?`: `T`[]) => `void` |
+| `value?` | `T`[] |
+
+___
+
+### ValueControl<T\>
+
+onChange handler and value type for hooks where only single selection is allowed
+
+#### Type parameters
+
+| Name | Description |
+| :------ | :------ | 
+| `T` | Type of items |
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `onChange?` | (`value?`: `T`) => `void` |
+| `value?` | `T` |
+
