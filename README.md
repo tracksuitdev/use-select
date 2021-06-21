@@ -124,7 +124,7 @@ Allows selection of multiple items. Useful for building multiple select componen
 Same as useSelect [props](#props), only difference are value and onChange props, in this case value is an array and onChange expects array parameter.
 
 ### Return value
-**UseMultipleSelect**<T, S, D\>: [`Omit<UseSelect<T, S, D>, "remove"\>`](#return-value) & { `remove`: (`item`: `T`) => `void` ; `removeByIndex`: (`index`: `number`) => `void`  }
+**UseMultipleSelect**<T, S, D\>: [`Omit<UseSelect<T, S, D>, "remove">`](#return-value) & { `remove`: (`item`: `T`) => `void` ; `removeByIndex`: (`index`: `number`) => `void`  }
 
 Returns a similar object to [useSelect](#useselect), difference is in remove function. Also provides removeByIndex function for removing items according to their index in value array.
 
