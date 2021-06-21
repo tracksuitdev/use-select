@@ -105,7 +105,7 @@ const Select = () => {
 
 ## useMultipleSelect
 
-▸ **useMultipleSelect**<T, S, D\>(`props`: [`UseMultipleSelectProps<T>`](#props)): [UseMultipleSelect](modules.md#usemultipleselect)<T, S, D\>
+▸ **useMultipleSelect**<T, S, D\>(`props`: [`UseMultipleSelectProps<T>`](#props-1)): [UseMultipleSelect](modules.md#usemultipleselect)<T, S, D\>
 
 Allows selection of multiple items. Useful for building multiple select component.
 
