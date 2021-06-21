@@ -10,24 +10,23 @@ React hooks for building select and combobox components.
 
 ## useSelect
 
-▸ **useSelect**<T, S, D\>(`props`: [`UseSelectProps<T>`](#props)): [UseSelect](#use-select)<T, S, D\>
+▸ **useSelect**<T, S, D\>(`props`: [`UseSelectProps<T>`](#props)): [UseSelect](#return-value)<T, S, D\>
 
-Provides callbacks and state for controlling select component.
+Provides state and callbacks for building select component.
 
-Doesn't control value, instead it is expected that value and onChange function will be provided as a prop to this
-hook. Callbacks that "change" value, actually call function with new value.
+Only required prop are items that can be selected. To control value, provide [value and onChange](#valuecontrolt) props.
 
 ### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `T` | `T` - type of items |
-| `S` | `S`: `HTMLElement` = `HTMLDivElement` - type of select element |
-| `D` | `D`: `HTMLElement` = `HTMLUListElement`- type of dropdown element |
+| `T` | `T` - Type of items |
+| `S` | `S`: `HTMLElement` = `HTMLDivElement` - Type of select element |
+| `D` | `D`: `HTMLElement` = `HTMLUListElement`- Type of dropdown element |
 
 
 ### Props
-**UseSelectProps**<T\> = [`Items<T>`](#items-1) & [`ValueControl<T>`](#ValueControl) & `Handlers` & `Flags`
+**UseSelectProps**<T\> = [`Items<T>`](#itemst) & [`ValueControl<T>`](#valuecontrolt) & [`Handlers`](#handlers) & [`Flags`](#flags)
 
 ### Return value
 **UseSelect**<T, S, D\>
@@ -48,13 +47,11 @@ hook. Callbacks that "change" value, actually call function with new value.
 | `selectRef` | `RefObject`<S\> | Ref for combobox element, used internally to allow closing of dropdown on outside click |
 | `setHighlightedIndex` | (`index`: `number`) => `void` | Sets highlightedIndex to provided index |
 
-## Usage
-
-Examples with basic styling and markup.
-
-### select
- ```typescript jsx
-
+### Usage
+This example uses basic styling and markup, you can style your components however you want. 
+Note that you need to assign selectRef and dropdownRef, this is needed so that isOpen is set to false (dropdown is closed) if you click outside select or dropdown element.
+If you want your dropdown to scroll to highlighted item when user presses arrow keys make your items direct children of dropdown element.
+```typescript jsx
 const Select = () => {
   const [value, setValue] = useState<string>();
   const {
@@ -75,7 +72,7 @@ const Select = () => {
 
   return (
     <div>
-      <div ref={selectRef} tabIndex={0} onFocus={open} onKeyDown={handleKeyDown}>
+      <div ref={selectRef} tabIndex={0} onFocus={open} onKeyDown={handleKeyDown}> {/* select */}
         {value}
         <button onFocus={e => e.stopPropagation()} onClick={handleClick}>
           {isOpen ? <span>&#9650;</span> : <span>&#9660;</span>}
@@ -87,7 +84,7 @@ const Select = () => {
           tabIndex={0}
           onKeyDown={handleKeyDown}
           style={{ width: "400px", backgroundColor: "grey" }}>
-          {items.map((item, index) => (
+          {items.map((item, index) => ( // item
             <li
               key={item}
               onClick={() => handleItemClick(item)}
@@ -105,6 +102,24 @@ const Select = () => {
   );
 };
 ````
+
+## useMultipleSelect
+
+**UseMultipleSelect**<T, S, D\>: `Omit`<UseSelect<T, S, D\>, ``"remove"``\> & { `remove`: (`item`: `T`) => `void` ; `removeByIndex`: (`index`: `number`) => `void`  }
+
+### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` - Type of items |
+| `S` | `S`: `HTMLElement` = `HTMLDivElement` - Type of select element |
+| `D` | `D`: `HTMLElement` = `HTMLUListElement`- Type of dropdown element |
+
+## Usage
+
+Examples with basic styling and markup.
+
+### select
 
 ### multiple select
 

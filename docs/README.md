@@ -3,14 +3,56 @@ use-select / [Exports](modules.md)
 # use-select
 React hooks for building select and combobox components.
 
-Exported hooks:
+* [useSelect](#useselect)
+* [useMultipleSelect](#usemultipleselect)
+* [useCombobox](#usecombobox)
+* [useMultipleCombobox](#usemultiplecombobox)
+* [useAsyncCombobox](#useasynccombobox)
+* [useMultipleAsyncCombobox](#usemultipleasynccombobox)
 
 ## useSelect
 
+▸ **useSelect**<T, S, D\>(`props`: [`UseSelectProps<T>`](#props)): [UseSelect](#use-select)<T, S, D\>
+
+Provides state and callbacks for building select component.
+
+Only required prop are items that can be selected. To control value, provide [value and onChangeProp](#valuecontrolt).
+
+### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` - type of items |
+| `S` | `S`: `HTMLElement` = `HTMLDivElement` - type of select element |
+| `D` | `D`: `HTMLElement` = `HTMLUListElement`- type of dropdown element |
+
+### Props
+**UseSelectProps**<T\> = [`Items<T>`](#itemst) & [`ValueControl<T>`](#valuecontrolt) & [`Handlers`](#handlers) & [`Flags`](#flags)
+
+### Return value
+**UseSelect**<T, S, D\>
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `clear` | (`e`: `ReactMouseEvent`) => `void` | Calls onChange with undefined or empty array value in case of multiple selection. Prevents event propagation |
+| `dropdownRef` | `RefObject`<D\> | Ref for dropdown element, used internally to allow closing of dropdown on outside click and scrolling to highlighted index item when using arrow keys to highlighted items. |
+| `handleClick` | (`e`: `ReactMouseEvent`) => `void` | Toggles isOpen flag, prevents event propagation |
+| `handleItemClick` | (`item`: `T`) => `void` | Calls select if item isn't selected or remove if item is selected |
+| `handleKeyDown` | `KeyboardEventHandler`<never\> | Handles ArrowUp, ArrowDown, Enter and Escape key down event, apply to select and dropdown element (add tabIndex=0 to allow key events on div element) |
+| `highlightedIndex` | `number` | Index of currently highlighted item, used for keyboard control, ArrowUp key decreases this, while ArrowDown key increases it |
+| `isOpen` | `boolean` | Indicates whether dropdown is open or not |
+| `isSelected` | (`item`: `T`) => `boolean` | Returns true if item equals value, or in case of multiple selection, if item is part of value array |
+| `open` | () => `void` | Sets isOpen to true |
+| `remove` | () => `void` | Calls onChange with value set to undefined |
+| `select` | (`item`: `T`) => `void` | Calls onChange with provided item set as value |
+| `selectRef` | `RefObject`<S\> | Ref for combobox element, used internally to allow closing of dropdown on outside click |
+| `setHighlightedIndex` | (`index`: `number`) => `void` | Sets highlightedIndex to provided index |
+
 ## Usage
 
+Examples with basic styling and markup.
+
 ### select
-example with basic styling:
  ```typescript jsx
 
 const Select = () => {
@@ -371,3 +413,89 @@ const MultipleAsyncCombobox = () => {
   );
 };
 ```
+## Common Types
+
+### FetchItems<T\>
+
+#### Type parameters
+
+| Name | Description |
+| :------ | :------ |
+| `T` | Type of items |
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `fetchItems` | (`query`: `string`) => `Promise`<T[]\> | Fetch items asynchronously |
+
+___
+
+### Flags
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `clearable?` | `boolean` | If true value can be set to undefined for {@link ValueControl.value}, and for {@link MultiValueControl.value} can be set to an empty array. Note that for {@link MultiValueControl.value} case it is still possible to set value to an empty array by calling remove or removeByIndex on every selected item. |
+| `disabled?` | `boolean` | If true open function does nothing, same as readOnly, provided as separate prop for convenience |
+| `readOnly?` | `boolean` | If true open function does nothing, same as disabled, provided as separate prop for convenience |
+
+___
+
+### Handlers
+
+| Name | Type | Description |
+| :------ | :------ | :------ | 
+| `onClose?` | () => `void` | This function is called when isOpen is set to `false` |
+| `onOpen?` | () => `void` | This function is called when isOpen is set to `true` |
+
+___
+
+### Items<T\>
+
+#### Type parameters
+
+| Name | Description |
+| :------ | :------ | 
+| `T` | Type of items |
+
+| Name | Type | Description |
+| :------ | :------ | :------ | 
+| `items` | `T`[] | Options that can be selected |
+
+___
+
+### MultiValueControl<T\>
+
+onChange handler and value type for hooks where multiple selection is allowed
+
+#### Type parameters
+
+| Name | Description |
+| :------ | :------ | 
+| `T` | Type of items |
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `onChange?` | (`value?`: `T`[]) => `void` |
+| `value?` | `T`[] |
+
+___
+
+### ValueControl<T\>
+
+onChange handler and value type for hooks where only single selection is allowed
+
+#### Type parameters
+
+| Name | Description |
+| :------ | :------ | 
+| `T` | Type of items |
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `onChange?` | (`value?`: `T`) => `void` |
+| `value?` | `T` |

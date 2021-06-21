@@ -6,18 +6,18 @@
 
 ### Type aliases
 
-- [UseSelect](modules.md#useselect)
-- [UseSelectProps](modules.md#useselectprops)
+- [UseMultipleSelect](modules.md#usemultipleselect)
+- [UseMultipleSelectProps](modules.md#usemultipleselectprops)
 
 ### Functions
 
-- [useSelect](modules.md#useselect)
+- [useMultipleSelect](modules.md#usemultipleselect)
 
 ## Type aliases
 
-### UseSelect
+### UseMultipleSelect
 
-Ƭ **UseSelect**<T, S, D\>: `Object`
+Ƭ **UseMultipleSelect**<T, S, D\>: `Omit`<UseSelect<T, S, D\>, ``"remove"``\> & { `remove`: (`item`: `T`) => `void` ; `removeByIndex`: (`index`: `number`) => `void`  }
 
 #### Type parameters
 
@@ -27,33 +27,15 @@
 | `S` | `S`: `HTMLElement` = `HTMLDivElement` |
 | `D` | `D`: `HTMLElement` = `HTMLUListElement` |
 
-#### Type declaration
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `clear` | (`e`: `ReactMouseEvent`) => `void` | - |
-| `dropdownRef` | `RefObject`<D\> | Ref for dropdown element, used internally to allow closing of dropdown on outside click and scrolling to highlighted index item when using arrow keys to highlighted items. |
-| `handleClick` | (`e`: `ReactMouseEvent`) => `void` | - |
-| `handleItemClick` | (`item`: `T`) => `void` | - |
-| `handleKeyDown` | `KeyboardEventHandler`<never\> | Handles ArrowUp, ArrowDown, Enter and Escape key down event, apply to select and dropdown element (add tabIndex=0 to allow key events on div element) |
-| `highlightedIndex` | `number` | Index of currently highlighted item, used for keyboard control, ArrowUp key decreases this, while ArrowDown key increases it |
-| `isOpen` | `boolean` | Indicates whether dropdown is open or not |
-| `isSelected` | (`item`: `T`) => `boolean` | - |
-| `open` | () => `void` | - |
-| `remove` | () => `void` | - |
-| `select` | (`item`: `T`) => `void` | - |
-| `selectRef` | `RefObject`<S\> | Ref for combobox element, used internally to allow closing of dropdown on outside click |
-| `setHighlightedIndex` | (`index`: `number`) => `void` | - |
-
 #### Defined in
 
-use-select.ts:6
+[use-multiple-select.ts:7](https://github.com/tracksuitdev/use-select/blob/b17eb60/src/use-multiple-select.ts#L7)
 
 ___
 
-### UseSelectProps
+### UseMultipleSelectProps
 
-Ƭ **UseSelectProps**<T\>: `Items`<T\> & `ValueControl`<T\> & `Handlers` & `Flags`
+Ƭ **UseMultipleSelectProps**<T\>: `Items`<T\> & `MultiValueControl`<T\> & `Handlers` & `Flags`
 
 #### Type parameters
 
@@ -63,20 +45,20 @@ ___
 
 #### Defined in
 
-use-select.ts:4
+[use-multiple-select.ts:5](https://github.com/tracksuitdev/use-select/blob/b17eb60/src/use-multiple-select.ts#L5)
 
 ## Functions
 
-### useSelect
+### useMultipleSelect
 
-▸ **useSelect**<T, S, D\>(`__namedParameters`): [UseSelect](modules.md#useselect)<T, S, D\>
+▸ **useMultipleSelect**<T, S, D\>(`__namedParameters`): [UseMultipleSelect](modules.md#usemultipleselect)<T, S, D\>
 
-Provides callbacks and state for controlling select component.
+Allows selection of multiple items. Useful for building multiple select component.
 
 Internally it uses {@link useSelectBase} and {@link useHandlers} hooks.
 
 Doesn't control value, instead it is expected that value and onChange function will be provided as a prop to this
-hook. Callbacks that "change" value, actually call {@link ValueControl.onChange} function with new value.
+hook. Callbacks that "change" value, actually call {@link MultiValueControl.onChange} function with new value.
 
 #### Type parameters
 
@@ -90,12 +72,12 @@ hook. Callbacks that "change" value, actually call {@link ValueControl.onChange}
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | [UseSelectProps](modules.md#useselectprops)<T\> |
+| `__namedParameters` | [UseMultipleSelectProps](modules.md#usemultipleselectprops)<T\> |
 
 #### Returns
 
-[UseSelect](modules.md#useselect)<T, S, D\>
+[UseMultipleSelect](modules.md#usemultipleselect)<T, S, D\>
 
 #### Defined in
 
-use-select.ts:79
+[use-multiple-select.ts:34](https://github.com/tracksuitdev/use-select/blob/b17eb60/src/use-multiple-select.ts#L34)
