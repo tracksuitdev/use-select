@@ -105,23 +105,30 @@ const Select = () => {
 
 ## useMultipleSelect
 
-**UseMultipleSelect**<T, S, D\>: `Omit`<UseSelect<T, S, D\>, ``"remove"``\> & { `remove`: (`item`: `T`) => `void` ; `removeByIndex`: (`index`: `number`) => `void`  }
+▸ **useMultipleSelect**<T, S, D\>(`props`: [`UseMultipleSelectProps<T>`](#props)): [UseMultipleSelect](modules.md#usemultipleselect)<T, S, D\>
 
-### Type parameters
+Allows selection of multiple items. Useful for building multiple select component.
 
-| Name | Type |
-| :------ | :------ |
-| `T` | `T` - Type of items |
-| `S` | `S`: `HTMLElement` = `HTMLDivElement` - Type of select element |
-| `D` | `D`: `HTMLElement` = `HTMLUListElement`- Type of dropdown element |
+### Props
 
-## Usage
+**UseMultipleSelectProps**<T\>: [`Items<T>`](#itemst) & [`MultiValueControl<T>`](#multivaluecontrolt) & [`Handlers`](#handlers) & [`Flags`](#flags)
 
-Examples with basic styling and markup.
+Same as useSelect [props](#props), only difference are value and onChange props, in this case value is an array and onChange expects array parameter.
 
-### select
+### Return value
+**UseMultipleSelect**<T, S, D\>: [`Omit<UseSelect<T, S, D>, "remove"\>`](#return-value) & { `remove`: (`item`: `T`) => `void` ; `removeByIndex`: (`index`: `number`) => `void`  }
 
-### multiple select
+Returns a similar object to [useSelect](#useselect), difference is in remove function. Also provides removeByIndex function for removing items according to their index in value array.
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `remove`| (`item`: `T`) => void | Calls onChange with value array without the provided item |
+| `removeByIndex`| (`index`: `number`) => void | Calls onChange with value array without the item at given index |
+
+### Usage
+This example uses basic styling and markup, you can style your components however you want.
+Note that you need to assign selectRef and dropdownRef, this is needed so that isOpen is set to false (dropdown is closed) if you click outside select or dropdown element.
+If you want your dropdown to scroll to highlighted item when user presses arrow keys make your items direct children of dropdown element.
 
 ```typescript jsx
 const MultipleSelect = () => {
@@ -174,6 +181,8 @@ const MultipleSelect = () => {
   );
 };
 ```
+
+
 ### combobox
 ```typescript jsx
 const Combobox = () => {
