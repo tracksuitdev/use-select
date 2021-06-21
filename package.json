@@ -31,12 +31,16 @@
       "pre-commit": "tsdx lint"
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tracksuitdev/use-ripple"
+  },
   "prettier": {
     "printWidth": 120,
     "trailingComma": "es5",
     "jsxBracketSameLine": true
   },
-  "name": "use-select",
+  "name": "@tracksuitdev/use-select",
   "author": "tracksuitdev",
   "module": "dist/use-select.esm.js",
   "size-limit": [
