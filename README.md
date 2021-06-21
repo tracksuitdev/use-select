@@ -221,7 +221,7 @@ itemToString function converts item to string so items can be compared to input 
 ### Return value
 **UseCombobox**<T, S, D\>: [`UseSelect<T, S, D>`](#return-value) & [UseComboboxReturnValue](#usecomboboxreturnvaluet)<T\>
 
-Returns everything [useSelect](#useselect) hook returns + everythin contained in UseComboboxReturnValue type.
+Returns everything [useSelect](#useselect) hook returns + everything contained in UseComboboxReturnValue type.
 
 #### UseComboboxReturnValue<T\>
 | Name | Type | Description |
@@ -229,7 +229,7 @@ Returns everything [useSelect](#useselect) hook returns + everythin contained in
 | `inputRef` | `RefObject`<HTMLInputElement\> | Ref that needs to be applied to combobox input element |
 | `inputValue` | `string` | Value of input element |
 | `items` | `T`[] | Items filtered by filter prop, or in case of async combobox result of fetchItems |
-| `setInputValue` | (`value`: `string`) => `void` | - |
+| `setInputValue` | (`value`: `string`) => `void` | Sets input value to given value |
 
 ### Usage
 This example uses basic styling and markup, you can style your components however you want.
