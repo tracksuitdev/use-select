@@ -21,6 +21,9 @@
   "peerDependencies": {
     "react": ">=16"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://github.com/tracksuitdev/use-select#readme",
   "keywords": ["react", "hooks", "select", "combobox", "multiple select", "multiple combobox", "async combobox"],
   "husky": {
