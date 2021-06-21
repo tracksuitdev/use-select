@@ -607,7 +607,7 @@ ___
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `clearable?` | `boolean` | If true value can be set to undefined for {@link ValueControl.value}, and for {@link MultiValueControl.value} can be set to an empty array. Note that for {@link MultiValueControl.value} case it is still possible to set value to an empty array by calling remove or removeByIndex on every selected item. |
+| `clearable?` | `boolean` | If true value can be set to undefined for [value](#valuecontrolt), and for [array value](#multivaluecontrolt) can be set to an empty array. Note that for [array value](#multivaluecontrolt) case it is still possible to set value to an empty array by calling remove or removeByIndex on every selected item. |
 | `disabled?` | `boolean` | If true open function does nothing, same as readOnly, provided as separate prop for convenience |
 | `readOnly?` | `boolean` | If true open function does nothing, same as disabled, provided as separate prop for convenience |
 
