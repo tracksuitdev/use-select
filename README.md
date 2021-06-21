@@ -105,9 +105,17 @@ const Select = () => {
 
 ## useMultipleSelect
 
-▸ **useMultipleSelect**<T, S, D\>(`props`: [`UseMultipleSelectProps<T>`](#props-1)): [UseMultipleSelect](modules.md#usemultipleselect)<T, S, D\>
+▸ **useMultipleSelect**<T, S, D\>(`props`: [`UseMultipleSelectProps<T>`](#props-1)): [UseMultipleSelect](#return-value-1)<T, S, D\>
 
 Allows selection of multiple items. Useful for building multiple select component.
+
+### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` - Type of items |
+| `S` | `S`: `HTMLElement` = `HTMLDivElement` - Type of select element |
+| `D` | `D`: `HTMLElement` = `HTMLUListElement`- Type of dropdown element |
 
 ### Props
 
@@ -183,7 +191,50 @@ const MultipleSelect = () => {
 ```
 
 
-### combobox
+## useCombobox
+
+▸ **useCombobox**<T, S, D\>(`props`: [`UseComboboxProps<T>`](#props-2)): [UseCombobox](#return-value-2)<T, S, D\>
+
+Hook that returns state and callbacks for controlling combobox component. Updates inputValue according to provided
+value (currently selected item). This keeps inputValue and value state in sync whenever an item is selected, or value
+was changed by some code.
+
+Internally uses [useSelect](#useselect) hook.
+
+### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` - Type of items |
+| `S` | `S`: `HTMLElement` = `HTMLDivElement` - Type of select element |
+| `D` | `D`: `HTMLElement` = `HTMLUListElement`- Type of dropdown element |
+
+### Props
+**UseComboboxProps**<T\>: [`UseSelectProps<T>`](#props) & [`ComboboxFunctions<T>`](#comboboxfunctionst)
+
+Similar to useSelect [props](#props) with added filter and itemToString functions. 
+
+filter function is used to filter items according to current input value of combobox. If not provided, defaults to returning items that start with input value.
+
+itemToString function converts item to string so items can be compared to input value.
+
+### Return value
+**UseCombobox**<T, S, D\>: [`UseSelect<T, S, D>`](#return-value) & [UseComboboxReturnValue](#usecomboboxreturnvaluet)<T\>
+
+Returns everything [useSelect](#useselect) hook returns + everythin contained in UseComboboxReturnValue type.
+
+#### UseComboboxReturnValue<T\>
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `inputRef` | `RefObject`<HTMLInputElement\> | Ref that needs to be applied to combobox input element |
+| `inputValue` | `string` | Value of input element |
+| `items` | `T`[] | Items filtered by filter prop, or in case of async combobox result of fetchItems |
+| `setInputValue` | (`value`: `string`) => `void` | - |
+
+### Usage
+This example uses basic styling and markup, you can style your components however you want.
+Note that you need to assign selectRef and dropdownRef, this is needed so that isOpen is set to false (dropdown is closed) if you click outside select or dropdown element.
+If you want your dropdown to scroll to highlighted item when user presses arrow keys make your items direct children of dropdown element.
 ```typescript jsx
 const Combobox = () => {
   const [value, setValue] = useState<string>();
@@ -240,7 +291,36 @@ const Combobox = () => {
   );
 };
 ```
-### combobox with multiple selection
+
+## useMultipleCombobox
+
+▸ **useMultipleCombobox**<T, S, D\>(`props`: [`UseMultipleComboboxProps<T>`](#props-3)): [UseMultipleCombobox](#return-value-3)<T, S, D\>
+
+Provides state and callbacks for combobox with multiple selection. When value prop changes, inputValue is set to
+empty string, thus allowing for selection of new item.
+
+Internally it uses [useMultipleSelect](#usemultipleselect) hook.
+
+Uses same props as useMultipleSelect + combobox functions (filter and itemToString). Returns same values as useMultipleSelect + values from [UseComboboxReturnValue](#usecomboboxreturnvaluet)
+
+### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` - Type of items |
+| `S` | `S`: `HTMLElement` = `HTMLDivElement` - Type of select element |
+| `D` | `D`: `HTMLElement` = `HTMLUListElement`- Type of dropdown element |
+
+### Props
+**UseMultipleComboboxProps**<T\>: [`UseMultipleSelectProps<T>`](#props-1) & [`ComboboxFunctions<T>`](#comboboxfunctionst)
+
+### Return value
+**UseMultipleCombobox**<T, S, D\>: [`UseMultipleSelect<T, S, D\>`](#return-value-1) & [`UseComboboxReturnValue<T>`](#usecomboboxreturnvaluet)
+
+### Usage
+This example uses basic styling and markup, you can style your components however you want.
+Note that you need to assign selectRef and dropdownRef, this is needed so that isOpen is set to false (dropdown is closed) if you click outside select or dropdown element.
+If you want your dropdown to scroll to highlighted item when user presses arrow keys make your items direct children of dropdown element.
 ```typescript jsx
 const MultipleCombobox = () => {
   const [value, setValue] = useState<string[]>();
@@ -298,7 +378,46 @@ const MultipleCombobox = () => {
   );
 };
 ```
-### async combobox
+
+## useAsyncCombobox
+▸ **useAsyncCombobox**<T, S, D\>(`props`: [`UseAsyncComboboxProps<T>`](#props-4)): [UseAsyncCombobox](#return-value-4)<T, S, D\>
+
+Returns state and callbacks for building combobox component that fetches items asynchronously.
+
+Internally it uses [useCombobox](#usecombobox) hook, but instead of filtering items this hook
+calls [fetchItems](#fetchitemst) when inputValue changes.
+
+Items returned from this hook are latest result of fetchItems call.
+
+### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` - Type of items |
+| `S` | `S`: `HTMLElement` = `HTMLDivElement` - Type of select element |
+| `D` | `D`: `HTMLElement` = `HTMLUListElement`- Type of dropdown element |
+
+### Props
+**UseAsyncComboboxProps**<T\>: { `itemToString`: [`ItemToString<T>`](#itemtostringt)  } & [`ValueControl<T>`](#valuecontrolt) & [`FetchItems<T>`](#fetchitemst) & [`Handlers`](#handlers) & [`Flags`](#flags)
+
+Similar to useCombobox, but instead of providing items you need to provide fetchItems function that will fetch items asynchronously when input value changes.
+
+### Return value
+**UseAsyncCombobox**<T, S, D\>: [`UseCombobox<T, S, D>`](#return-value-2) & [`Loading`](#loading)
+
+Returns everything useCombobox returns + loading flag that indicates if fetchItems is in progress.
+
+#### Loading
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `loading` | `boolean` | True if [fetchItems](#fetchitemst) has been called but promise hasn't resolved yet. |
+
+### Usage
+This example uses basic styling and markup, you can style your components however you want.
+Note that you need to assign selectRef and dropdownRef, this is needed so that isOpen is set to false (dropdown is closed) if you click outside select or dropdown element.
+If you want your dropdown to scroll to highlighted item when user presses arrow keys make your items direct children of dropdown element.
+
+Example uses mock promise that resolves after 100ms timeout for fetchItems. You should use a function that will fetch items from some location and return them.
 ```typescript jsx
 const AsyncCombobox = () => {
   const [value, setValue] = useState<string>();
@@ -367,7 +486,36 @@ const AsyncCombobox = () => {
   );
 };
 ```
-### async combobox with multiple selection
+## useMultipleAsyncCombobox
+
+▸ **useMultipleAsyncCombobox**<T, S, D\>(`props`: [`UseMultipleAsyncCombobx<T>`](#props-5)): [UseMultipleAsyncCombobox](#return-value-5)<T, S, D\>
+
+Similar to [useMultipleCombobox](#usemultiplecombobox) only this hook fetches new items on inputValue change.
+
+Uses [useMultipleCombobox](#usemultiplecombobox) internally.
+
+### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` - Type of items |
+| `S` | `S`: `HTMLElement` = `HTMLDivElement` - Type of select element |
+| `D` | `D`: `HTMLElement` = `HTMLUListElement`- Type of dropdown element |
+
+### Props
+**UseAsyncComboboxProps**<T\>: { `itemToString`: [`ItemToString<T>`](#itemtostringt)  } & [`MultiValueControl<T>`](#multivaluecontrolt) & [`FetchItems<T>`](#fetchitemst) & [`Handlers`](#handlers) & [`Flags`](#flags)
+
+### Return value
+**UseMultipleAsyncCombobox**<T, S, D\>: [`UseMultipleCombobox<T, S, D\>`](#return-value-3) & [`Loading`](#loading)
+
+Returns everything useMultipleCombobox returns + loading flag.
+
+### Usage
+This example uses basic styling and markup, you can style your components however you want.
+Note that you need to assign selectRef and dropdownRef, this is needed so that isOpen is set to false (dropdown is closed) if you click outside select or dropdown element.
+If you want your dropdown to scroll to highlighted item when user presses arrow keys make your items direct children of dropdown element.
+
+Example uses mock promise that resolves after 100ms timeout for fetchItems. You should use a function that will fetch items from some location and return them.
 ```typescript jsx
 const MultipleAsyncCombobox = () => {
   const [value, setValue] = useState<string[]>();
@@ -524,3 +672,28 @@ onChange handler and value type for hooks where only single selection is allowed
 | `onChange?` | (`value?`: `T`) => `void` |
 | `value?` | `T` |
 
+___
+
+### ComboboxFunctions<T\>
+Filter and itemToString props for combobox.
+
+#### Type parameters
+
+| Name | Description |
+| :------ | :------ | 
+| `T` | Type of items |
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filter?` | (`items`: `T`[], `query`: `string`, `itemToString`: [ItemToString](#itemtostringt)<T\>) => `T`[] | Provided items are equal to items prop, query is equal to current input value of combobox, and itemToString is equal to itemToString prop. Should return filtered items. If not provided, defaults to `items.filter(item => itemToString(item).toLowerCase().startsWith(query.toLowerCase()))` |
+| `itemToString` | [ItemToString](#itemtostringt)<T\> | Function that converts item to string. Since items can be of any type, to compare them we need to have a way of converting them to string. |
+
+### ItemToString<T\>
+
+Function that converts item to string. Since items can be of any type, to compare them we need to have a way of converting them to string.
+
+`T` - type of item
+
+(`item?`: `T`) => `string`

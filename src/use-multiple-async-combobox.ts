@@ -10,6 +10,12 @@ export type UseMultipleAsyncComboboxProps<T> = { itemToString: ItemToString<T> }
   Handlers &
   Flags;
 
+export type UseMultipleAsyncCombobox<
+  T,
+  S extends HTMLElement = HTMLDivElement,
+  D extends HTMLElement = HTMLUListElement
+> = UseMultipleCombobox<T, S, D> & Loading;
+
 /**
  * Similar to {@link useMultipleCombobox} only this hook fetches new items on inputValue change.
  *
@@ -22,12 +28,6 @@ export type UseMultipleAsyncComboboxProps<T> = { itemToString: ItemToString<T> }
  * @template S - type of select element, defaults to {@link HTMLDivElement}
  * @template D - type of dropdown element, defaults to {@link HTMLUListElement}
  */
-export type UseMultipleAsyncCombobox<
-  T,
-  S extends HTMLElement = HTMLDivElement,
-  D extends HTMLElement = HTMLUListElement
-> = UseMultipleCombobox<T, S, D> & Loading;
-
 export function useMultipleAsyncCombobox<
   T,
   S extends HTMLElement = HTMLDivElement,

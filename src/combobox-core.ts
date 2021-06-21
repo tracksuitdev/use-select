@@ -75,7 +75,7 @@ export function defaultFilter<T>(items: T[], query: string, itemToString: ItemTo
   );
 }
 
-export interface ComboboxFunctions<T> {
+export type ComboboxFunctions<T> = {
   /**
    * Function that converts item to string. Since items can be of any type, to compare them we need to have a way of
    * converting them to string.
@@ -88,7 +88,7 @@ export interface ComboboxFunctions<T> {
    * @param itemToString - function that converts item to string
    */
   filter?: (items: T[], query: string, itemToString: ItemToString<T>) => T[];
-}
+};
 
 /**
  * Helper hook that memoizes given function using ref. Neat trick to prevent rerunning of effects when a given function
