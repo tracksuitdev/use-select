@@ -12,6 +12,11 @@ React hooks for building select and combobox components.
 
 ```bash
 npm install @tracksuitdev/use-select
+```
+
+or if you use yarn
+
+```bash
 yarn add @tracksuitdev/use-select
 ```
 
