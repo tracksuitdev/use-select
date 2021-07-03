@@ -8,6 +8,13 @@ React hooks for building select and combobox components.
 * [useAsyncCombobox](#useasynccombobox)
 * [useMultipleAsyncCombobox](#usemultipleasynccombobox)
 
+## Installation
+
+```bash
+npm install @tracksuitdev/use-select
+yarn add @tracksuitdev/use-select
+```
+
 ## useSelect
 
 ▸ **useSelect**<T, S, D\>(`props`: [`UseSelectProps<T>`](#props)): [UseSelect](#return-value)<T, S, D\>
