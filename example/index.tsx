@@ -6,7 +6,7 @@ import { useAsyncCombobox, useSelect } from "../src";
 import { useMultipleSelect } from "../src";
 import { useCombobox } from "../src";
 import { useMultipleCombobox } from "../src";
-import { useMultipleAsyncCombobox } from "../src/use-multiple-async-combobox";
+import { useMultipleAsyncCombobox } from "../src";
 
 function range(n: number) {
   return Array.from(Array(n).keys());

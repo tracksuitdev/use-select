@@ -1,4 +1,4 @@
-# use-select
+# use-select ![npm (scoped)](https://img.shields.io/npm/v/@tracksuitdev/use-select) ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@tracksuitdev/use-select) ![NPM](https://img.shields.io/npm/l/@tracksuitdev/use-select) 
 React hooks for building select and combobox components.
 
 * [useSelect](#useselect)
@@ -709,3 +709,10 @@ Function that converts item to string. Since items can be of any type, to compar
 `T` - type of item
 
 (`item?`: `T`) => `string`
+
+## Examples
+
+To run examples run `yarn start` inside example directory
+
+--------
+*Made with [tsdx](https://tsdx.io/)*
